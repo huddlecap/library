@@ -100,7 +100,20 @@ myLibrary.addBook("The Green Kocaine", "Mr Green", 234, false);
 myLibrary.addBook("White Powder", "Walter white", 278, true);
 myLibrary.displayBooks();
 
+// validating form with custom error message
+const authorInput = document.getElementById("author");
+authorInput.addEventListener("invalid",function(){
+  if (authorInput.value === ""){
+    authorInput.setCustomValidity("The author name must be filled!");
+  }
+});
+authorInput.addEventListener("input",function(){
+  authorInput.setCustomValidity("");
+});
+
 // function Book(title, author, pages, read) {
+
+
 //   this.id = crypto.randomUUID();
 //   this.title = title;
 //   this.author = author;
